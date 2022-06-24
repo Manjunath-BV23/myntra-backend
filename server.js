@@ -4,7 +4,7 @@ require("dotenv").config();
 var cors = require("cors");
 
 // Port details and connect function
-const port = process.env.PORT || 3421;
+const port = process.env.PORT || 5399;
 const connect = require("./configure");
 
 app.use(express.json());
@@ -25,7 +25,7 @@ app.use("/cart/", CartRouter);
 app.listen(port,  async() => {
     try{
         await connect();
-        console.log(`Port 3421 is listening..`);
+        console.log(`Port 5399 is listening..`);
     }
     catch(err){
         console.log(err.message);
