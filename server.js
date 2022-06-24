@@ -13,11 +13,13 @@ app.use(cors());
 // routers details
 const ProductRouter = require("./Controllers/Product.Controller");
 const UserRouter = require("./Controllers/User.Controller");
-// const RestaurantRouter = require("./Controllers/Restaurant.Controller");
+const CartRouter = require("./Controllers/Cart.Controller");
 
 // app.use("/restaurants/", RestaurantRouter);
 app.use("/users/", UserRouter);
 app.use("/products/", ProductRouter);
+app.use("/cart/", CartRouter);
+
 
 
 app.listen(port,  async() => {
