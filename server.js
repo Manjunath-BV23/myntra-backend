@@ -12,14 +12,18 @@ app.use(cors());
 
 // routers details
 const ProductRouter = require("./Controllers/Product.Controller");
-const UserRouter = require("./Controllers/User.Controller");
+// const UserRouter = require("./Controllers/User.Controller");
 const CartRouter = require("./Controllers/Cart.Controller");
 
-// app.use("/restaurants/", RestaurantRouter);
-app.use("/users/", UserRouter);
+
+// app.use("/users/", UserRouter);
 app.use("/products/", ProductRouter);
 app.use("/cart/", CartRouter);
 
+const {register, login} = require("./Controllers/User.Controller")
+
+app.post("/register",register)
+app.post("/login",login)
 
 
 app.listen(port,  async() => {
@@ -28,6 +32,6 @@ app.listen(port,  async() => {
         console.log(`Port 5399 is listening..`);
     }
     catch(err){
-        console.log(err.message);
+        console.log(err);
     }
 })

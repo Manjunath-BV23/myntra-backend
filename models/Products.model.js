@@ -16,6 +16,7 @@ const productSchema = new mongoose.Schema(
     images: [{ type: String, required: true }],
     ratings: { type: Number, required: true },
     count: { type: Number, required: true },
+    qty: { type: Number, required: true },
   },
   {
     versionKey: false,
